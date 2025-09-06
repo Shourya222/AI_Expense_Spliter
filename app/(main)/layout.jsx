@@ -1,3 +1,5 @@
+"use client"
+
 import { Authenticated } from 'convex/react'
 import React from 'react'
 
