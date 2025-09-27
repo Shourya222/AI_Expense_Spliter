@@ -12,7 +12,11 @@ export const sendEmail = action({
     apiKey: v.string(),
   },
   handler: async (ctx, args) => {
-    const resend = new Resend(args.apiKey);
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (!resendApiKey) {
+      throw new Error("RESEND_API_KEY is missing in environment");
+    }
+    const resend = new Resend(resendApiKey);
 
     try {
       const result = await resend.emails.send({
