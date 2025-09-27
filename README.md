@@ -43,7 +43,7 @@ It allows groups of people to track expenses, split bills, and settle balances s
 ---
 
 ## 📂 Folder Structure
-
+```bash
 ai-splitwise-clone/
 │
 ├── app/ # Next.js App Router pages
@@ -65,8 +65,6 @@ ai-splitwise-clone/
 ├── styles/ # Global styles
 └── README.md # Project documentation
 
-yaml
-Copy code
 
 ---
 
