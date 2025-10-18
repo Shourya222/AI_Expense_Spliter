@@ -10,13 +10,16 @@ import { BarLoader } from "react-spinners";
 import { Authenticated, Unauthenticated } from "convex/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./theme-mode";
+import { useTheme } from "next-themes";
 
 export default function Header() {
   const { isLoading } = useStoreUser();
   const path = usePathname();
+  const { theme } = useTheme();
 
   return (
-    <header className="fixed top-0 w-full border-b bg-white/95 backdrop-blur z-50 supports-[backdrop-filter]:bg-white/60">
+    <header className={theme==="light" ? "fixed top-0 w-full border-b bg-white/95 backdrop-blur z-50 supports-[backdrop-filter]:bg-white/60" : "fixed top-0 w-full border-b bg-black/95 backdrop-blur z-50 supports-[backdrop-filter]:bg-black/60"}>
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -44,6 +47,10 @@ export default function Header() {
             </Link>
           </div>
         )}
+        
+        <div>
+          <ModeToggle />
+        </div>
 
         <div className="flex items-center gap-4">
           <Authenticated>

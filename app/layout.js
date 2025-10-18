@@ -4,8 +4,9 @@ import Header from "@/components/header";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Splitr",
@@ -14,23 +15,27 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/logos/logo-s.png" sizes="any"/>
+        <link rel="icon" href="/logos/logo-s.png" sizes="any" />
       </head>
-      <body
-        className={`${inter.className} `}
-      >
-        <ClerkProvider>
-          <ConvexClientProvider>
-            <Header />
-            <main className="min-h-screen">
-              {children}
-              <Toaster richColors/>
-            </main>
-          </ConvexClientProvider>
-        </ClerkProvider>
-
+      <body className={`${inter.className} `}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ClerkProvider>
+            <ConvexClientProvider>
+              <Header />
+              <main className="min-h-screen">
+                {children}
+                <Toaster richColors />
+              </main>
+            </ConvexClientProvider>
+          </ClerkProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
