@@ -40,7 +40,7 @@ const groupSchema = z.object({
   description: z.string().optional(),
 });
 
-export function CreateGroupModal({ isOpen, onClose, onSuccess }) {
+const CreateGroupModal = ({ isOpen, onClose, onSuccess }) => {
   const [selectedMembers, setSelectedMembers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [commandOpen, setCommandOpen] = useState(false);
@@ -266,3 +266,5 @@ export function CreateGroupModal({ isOpen, onClose, onSuccess }) {
     </Dialog>
   );
 }
+
+export default CreateGroupModal;
