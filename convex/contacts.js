@@ -69,7 +69,7 @@ export const getAllContacts = query({
         description: g.description,
         memberCount: g.members.length,
         type: "group",
-      }));
+      }));   //for each filtered group, it creates a simplified object with just the useful info, An array of clean group summaries that belong to the current user
 
     /* sort alphabetically */
     contactUsers.sort((a, b) => a?.name.localeCompare(b?.name));

@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex flex-col pt-16">
         <section className="mt-20 pb-20 space-y-10 md:space-y-20 px-5">
           <div className="container mx-auto px-4 md:px-6 text-center space-y-6">
-            <Badge variant="outline" className="text-green-700 bg-green-100">
+            <Badge variant="outline" className="text-[#c94b47] bg-[#FAE3D6]">
               Split expenses, effortlessly
             </Badge>
             <h1 className=" gradient-title mx-auto max-w-4xl text-4xl md:text-7xl">
@@ -25,7 +25,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="bg-green-600 hover:bg-green-700"
+                className="bg-[#ffb88e] hover:bg-[#c94b47] hover:text-[#ffffff] text-[#c94b47]"
               >
                 <Link href="/dashboard">
                   Get Started how
@@ -36,7 +36,7 @@ export default function Home() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-green-600 text-green-600 hover:bg-green-50"
+                className="border-[#ffb88e] text-[#c94b47] hover:bg-green-50"
               >
                 <Link href="#how-it-works">See How It Works</Link>
               </Button>
@@ -59,7 +59,7 @@ export default function Home() {
         {/* ───── Features ───── */}
         <section id="features" className="bg-gray-50 py-20">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <Badge variant="outline" className="bg-green-100 text-green-700">
+            <Badge variant="outline" className="text-[#c94b47] bg-[#FAE3D6]">
               Features
             </Badge>
             <h2 className="gradient-title mt-2 text-3xl md:text-4xl">
@@ -89,7 +89,7 @@ export default function Home() {
         {/* ───── How it works ───── */}
         <section id="how-it-works" className="py-20">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <Badge variant="outline" className="bg-green-100 text-green-700">
+            <Badge variant="outline" className="text-[#c94b47] bg-[#FAE3D6]">
               How It Works
             </Badge>
             <h2 className="gradient-title mt-2 text-3xl md:text-4xl">
@@ -103,7 +103,7 @@ export default function Home() {
             <div className="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-3">
               {STEPS.map(({ label, title, description }) => (
                 <div key={label} className="flex flex-col items-center space-y-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-xl font-bold text-green-600">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FAE3D6] text-xl font-bold text-[#c94b47]">
                     {label}
                   </div>
                   <h3 className="text-xl font-bold">{title}</h3>
@@ -117,7 +117,7 @@ export default function Home() {
         {/* ───── Testimonials ───── */}
       <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <Badge variant="outline" className="bg-green-100 text-green-700">
+          <Badge variant="outline" className="text-[#c94b47] bg-[#FAE3D6]">
             Testimonials
           </Badge>
           <h2 className="gradient-title mt-2 text-3xl md:text-4xl">
@@ -159,7 +159,7 @@ export default function Home() {
               Join thousands of users who have made splitting expenses
               stress‑free.
             </p>
-            <Button asChild size="lg" className="bg-green-800 hover:opacity-90">
+            <Button asChild size="lg" className="bg-[#c94b47] text-[#ffffff] hover:opacity-90">
               <Link href="/dashboard">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />

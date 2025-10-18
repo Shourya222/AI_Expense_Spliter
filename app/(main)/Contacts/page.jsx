@@ -39,7 +39,7 @@ export default function ContactsPage() {
   if (isLoading) {
     return (
       <div className="container mx-auto py-12">
-        <BarLoader width={"100%"} color="#36d7b7" />
+        <BarLoader width={"100%"} color="#c94b47" />
       </div>
     );
   }
@@ -50,7 +50,7 @@ export default function ContactsPage() {
     <div className="container mx-auto py-6">
       <div className="flex flex-col sm:flex-row sm:items-center gap-4 justify-between mb-6">
         <h1 className="text-5xl gradient-title">Contacts</h1>
-        <Button onClick={() => setIsCreateGroupModalOpen(true)}>
+        <Button onClick={() => setIsCreateGroupModalOpen(true)} className="bg-[#c94b49] hover:scale-98 cursor-pointer">
           <Plus className="mr-2 h-4 w-4" />
           Create Group
         </Button>

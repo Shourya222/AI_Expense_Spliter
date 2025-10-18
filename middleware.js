@@ -11,12 +11,12 @@ const isProtectedRoute = createRouteMatcher([ //createRouteMatcher -- A utility 
 ]);
 
 
-export default clerkMiddleware(async (auth, req) => { // clerkMiddleware : It wraps your middleware logic and gives you:ccess to the current authenticated user auth().
+export default clerkMiddleware(async (auth, req) => { // clerkMiddleware : It wraps your middleware logic and gives you access to the current authenticated user auth().
   const { userId } = await auth();
 
   if (!userId && isProtectedRoute(req)) { //If user is NOT logged in and tries to access a protected route:
     const { redirectToSignIn } = await auth();
-    return redirectToSignIn(); //// Sends them to login page
+    return redirectToSignIn(); // Sends them to login page
   }
 
   return NextResponse.next(); //If user is logged in OR route isn’t protected: Continue normally

@@ -32,13 +32,13 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               href="#features"
-              className="text-sm font-medium hover:text-green-600 transition"
+              className="text-sm font-medium hover:text-[#ea5753] transition"
             >
               Features
             </Link>
             <Link
               href="#how-it-works"
-              className="text-sm font-medium hover:text-green-600 transition"
+              className="text-sm font-medium hover:text-[#ea5753] transition"
             >
               How It Works
             </Link>
@@ -50,7 +50,7 @@ export default function Header() {
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="hidden md:inline-flex items-center gap-2 hover:text-green-600 hover:border-green-600 transition"
+                className="hidden md:inline-flex items-center gap-2 hover:text-[#ea5753] hover:border-[#ea5753] transition"
               >
                 <LayoutDashboard className="h-4 w-4" />
                 Dashboard
@@ -78,14 +78,14 @@ export default function Header() {
             </SignInButton>
 
             <SignUpButton>
-              <Button className="bg-green-600 hover:bg-green-700 border-none">
+              <Button className="bg-[#ea5753] hover:bg-[#c94b47] border-none">
                 Get Started
               </Button>
             </SignUpButton>
           </Unauthenticated>
         </div>
       </nav>
-      {isLoading && <BarLoader width={"100%"} color="#36d7b7" />}
+      {isLoading && <BarLoader width={"100%"} color="[#c94b47]" />}
     </header>
   );
 }
