@@ -1,15 +1,24 @@
-"use client"
+"use client";
 
-import { Authenticated } from 'convex/react'
-import React from 'react'
+import React from "react";
+import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 
-const MainLayout = ({children}) => {
+const MainLayout = ({ children }) => {
   return (
-    // children will be rendered only when user is Authenticated.
-    <Authenticated>       
-      <div className="container mx-auto mt-24 mb-20 px-4">{children}</div>
-    </Authenticated>
-  )
-}
+    <>
+      {/* When the user is signed in */}
+      <SignedIn>
+        <div className="container mx-auto mt-24 mb-20 px-4">
+          {children}
+        </div>
+      </SignedIn>
 
-export default MainLayout
+      {/* When the user is NOT signed in */}
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+    </>
+  );
+};
+
+export default MainLayout;
