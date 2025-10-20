@@ -16,12 +16,12 @@ export const getUserBalances = query({
           e.splits.some((s) => s.userId === user._id)) //.some checks if atleast one the element in array passes the given condition
     );
 
-    let youOwe = 0; //Total amount user owes others
-    let youAreOwed = 0; //Total amount others owe the user
+    let youOwe = 0; //Total amount user owes others   -- how much you need to pay to others
+    let youAreOwed = 0; //Total amount others owe the user  -- hom much others need to pay to you
     const balanceByUser = {}; //Detailed breakdown per user
 
     for (const e of expenses) {
-      const isPayer = e.paidByUserId === user._id;
+      const isPayer = e.paidByUserId === user._id;  // current use is the payer
       const mySplit = e.splits.find((s) => s.userId === user._id);
 
       if (isPayer) {

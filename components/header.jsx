@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { LayoutDashboard } from "lucide-react";
 import Link from "next/link";
@@ -18,8 +18,27 @@ export default function Header() {
   const path = usePathname();
   const { theme } = useTheme();
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    // Avoid rendering until the theme is known
+    return null;
+  }
+  // Base neutral color (visible instantly)
+  const baseClasses =
+    "fixed top-0 w-full border-b backdrop-blur z-50 supports-[backdrop-filter]:bg-opacity-60 transition-colors duration-300";
+
+  // Pick background based on theme *only after mount*
+  const themeClass = !mounted
+    ? "bg-neutral-100 dark:bg-neutral-900"
+    : theme === "light"
+      ? "bg-white/95 supports-[backdrop-filter]:bg-white/60"
+      : "bg-black/95 supports-[backdrop-filter]:bg-black/60";
+
   return (
-    <header className={theme==="light" ? "fixed top-0 w-full border-b bg-white/95 backdrop-blur z-50 supports-[backdrop-filter]:bg-white/60" : "fixed top-0 w-full border-b bg-black/95 backdrop-blur z-50 supports-[backdrop-filter]:bg-black/60"}>
+    <header className={`${baseClasses} ${themeClass}`}>
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -47,7 +66,7 @@ export default function Header() {
             </Link>
           </div>
         )}
-        
+
         <div>
           <ModeToggle />
         </div>
