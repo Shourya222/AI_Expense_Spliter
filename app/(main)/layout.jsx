@@ -1,9 +1,9 @@
-export const dynamic = "force-dynamic";
-
 "use client";
 
 import React from "react";
 import { RedirectToSignIn, SignedIn, SignedOut,  } from "@clerk/nextjs";
+
+export const dynamic = "force-dynamic";
 
 const MainLayout = ({ children }) => {
   return (
