@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
+import { RedirectToSignIn, SignedIn, SignedOut,  } from "@clerk/nextjs";
 
 const MainLayout = ({ children }) => {
   return (
